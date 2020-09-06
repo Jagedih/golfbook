@@ -10,7 +10,7 @@ A simple golf scoring book to store user golf round scores with following featur
 - Golf drounds can be either handicap rounds or practise rounds.
 - Fairway openings for every hole can be added while giving scores, default is null.
 - Putting scores can be added while user inputs scores, default is null.
-- GIR and be given while user inputs scores, default is null.  <p>
+- GIR and can given while user inputs scores, default is null.  <p>
 - User can view leaderboards for every golf course (only handicap rounds included).
 - User can view statistics for every course. (played rounds, shot averages from different tee openings)
 - User can view his own rounds.
