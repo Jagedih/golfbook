@@ -1,4 +1,4 @@
-d# Golfbook
+# Golfbook
 
 A simple golf scoring book to store user golf round scores with following features.
 
