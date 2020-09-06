@@ -6,6 +6,7 @@ A simple golf scoring book to store user golf round scores with following featur
 - User can create an account.
 - User can accept friend requests.
 - User can send friend requests.
+<br>
 <br/>
 - User can add own golf round scores using golf courses found in the database.
 - User can add golf rounds to users he is friends with.
@@ -13,6 +14,7 @@ A simple golf scoring book to store user golf round scores with following featur
 - Fairway openings for every hole can be added while giving scores, default is null.
 - Putting scores can be added while user inputs scores, default is null.
 - GIR and be given while user inputs scores, default is null.
+<br>
 <br/>
 - User can view leaderboards for every golf course (only handicap rounds included).
 - User can view statistics for every course. (played rounds, shot averages from different tee openings)
@@ -20,6 +22,7 @@ A simple golf scoring book to store user golf round scores with following featur
 - User can view his own shot averages for every course and hole he has played.
 - User can view his own GIR% for every hole he has played.
 - User can view his own average putting scores for every hole he has played.
+<br>
 <br/>
 - Admin can add courses to database.
 - Admin can view every round played.
