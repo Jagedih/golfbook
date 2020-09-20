@@ -1,0 +1,7 @@
+{% if session.user_id %}
+{% for detail in userDetails %}
+<h1>User profile: {{detail[0]}}</h1><p>
+real name: {{detail[1]}}<br>
+Golf club: {{detail[2]}}<br>
+{% endfor %}
+{% endif %}

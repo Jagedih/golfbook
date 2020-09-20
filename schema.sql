@@ -1,17 +1,110 @@
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    username TEXT UNIQUE,
-    name TEXT,
-    password TEXT,
-    golf_club INTEGER REFERENCES golf_clubs,
-);
 CREATE TABLE golf_clubs (
-    id SERIAL PRIMARY KEY,
-    name TEXT,
-    address TEXT,
+  id SERIAL PRIMARY KEY,
+  name TEXT UNIQUE,
+  address TEXT,
+  phone_number INTEGER
+);
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username TEXT UNIQUE,
+  real_name TEXT,
+  password TEXT NOT NULL,
+  club INTEGER REFERENCES golf_clubs,
+  admin BOOLEAN DEFAULT false
+);
+CREATE TABLE golf_courses (
+  id SERIAL PRIMARY KEY,
+  club INTEGER REFERENCES golf_clubs,
+  name TEXT NOT NULL,
+  hole1_par INTEGER NOT NULL,
+  hole2_par INTEGER NOT NULL,
+  hole3_par INTEGER NOT NULL,
+  hole4_par INTEGER NOT NULL,
+  hole5_par INTEGER NOT NULL,
+  hole6_par INTEGER NOT NULL,
+  hole7_par INTEGER NOT NULL,
+  hole8_par INTEGER NOT NULL,
+  hole9_par INTEGER NOT NULL,
+  hole10_par INTEGER NOT NULL,
+  hole11_par INTEGER NOT NULL,
+  hole12_par INTEGER NOT NULL,
+  hole13_par INTEGER NOT NULL,
+  hole14_par INTEGER NOT NULL,
+  hole15_par INTEGER NOT NULL,
+  hole16_par INTEGER NOT NULL,
+  hole17_par INTEGER NOT NULL,
+  hole18_par INTEGER NOT NULL,
+  expired BOOLEAN DEFAULT false
 );
 CREATE TABLE rounds (
-    id SERIAL PRIMARY KEY,
-    shots INTEGER,
-    player INTEGER REFERENCES users
+  id SERIAL PRIMARY KEY,
+  player INTEGER REFERENCES users ON DELETE CASCADE,
+  course INTEGER REFERENCES golf_courses,
+  date_played  DATE NOT NULL,
+  session_id INTEGER,
+  hole1_strokes INTEGER,
+  hole2_strokes INTEGER,
+  hole3_strokes INTEGER,
+  hole4_strokes INTEGER,
+  hole5_strokese INTEGER,
+  hole6_strokes INTEGER,
+  hole7_strokes INTEGER,
+  hole8_strokes INTEGER,
+  hole9_strokes INTEGER,
+  hole10_strokes INTEGER,
+  hole11_strokes INTEGER,
+  hole12_strokes INTEGER,
+  hole13_strokes INTEGER,
+  hole14_strokes INTEGER,
+  hole15_strokes INTEGER,
+  hole16_strokes INTEGER,
+  hole17_strokes INTEGER,
+  hole18_strokes INTEGER
+);
+CREATE TABLE putts (
+  id INTEGER PRIMARY KEY REFERENCES rounds ON DELETE CASCADE,
+  hole1_putts INTEGER,
+  hole2_putts INTEGER,
+  hole3_putts INTEGER,
+  hole4_putts INTEGER,
+  hole5_putts INTEGER,
+  hole6_putts INTEGER,
+  hole7_putts INTEGER,
+  hole8_putts INTEGER,
+  hole9_putts INTEGER,
+  hole10_putts INTEGER,
+  hole11_putts INTEGER,
+  hole12_putts INTEGER,
+  hole13_putts INTEGER,
+  hole14_putts INTEGER,
+  hole15_putts INTEGER,
+  hole16_putts INTEGER,
+  hole17_putts INTEGER,
+  hole18_putts INTEGER
+);
+CREATE TABLE fairway_hits (
+  id INTEGER PRIMARY KEY REFERENCES rounds ON DELETE CASCADE,
+  hole1_fairway_hit BOOLEAN DEFAULT false,
+  hole2_fairway_hit BOOLEAN DEFAULT false,
+  hole3_fairway_hit BOOLEAN DEFAULT false,
+  hole4_fairway_hit BOOLEAN DEFAULT false,
+  hole5_fairway_hit BOOLEAN DEFAULT false,
+  hole6_fairway_hit BOOLEAN DEFAULT false,
+  hole7_fairway_hit BOOLEAN DEFAULT false,
+  hole8_fairway_hit BOOLEAN DEFAULT false,
+  hole9_fairway_hit BOOLEAN DEFAULT false,
+  hole10_fairway_hit BOOLEAN DEFAULT false,
+  hole11_fairway_hit BOOLEAN DEFAULT false,
+  hole12_fairway_hit BOOLEAN DEFAULT false,
+  hole13_fairway_hit BOOLEAN DEFAULT false,
+  hole14_fairway_hit BOOLEAN DEFAULT false,
+  hole15_fairway_hit BOOLEAN DEFAULT false,
+  hole16_putts_fairway_hit BOOLEAN DEFAULT false,
+  hole17_putts_fairway_hit BOOLEAN DEFAULT false,
+  hole18_putts_fairway_hit BOOLEAN DEFAULT false
+);
+CREATE TABLE friendships (
+  id SERIAL PRIMARY KEY,
+  userid INTEGER REFERENCES users,
+  friend INTEGER REFERENCES users
 );

@@ -1,0 +1,49 @@
+{% if session.user_id %}
+<h1> Courses</h1>
+<table style="width:50%">
+  <tr>
+    <!– to do: loop table creation –>
+    <th>name</th>
+    <th>Hole1</th>
+    <th>Hole2</th>
+    <th>Hole3</th>
+    <th>Hole4</th>
+    <th>Hole5</th>
+    <th>Hole6</th>
+    <th>Hole7</th>
+    <th>Hole</th>
+    <th>Hole9</th>
+    <th>Hole10</th>
+    <th>Hole11</th>
+    <th>Hole12</th>
+    <th>Hole13</th>
+    <th>Hole14</th>
+    <th>Hole15</th>
+    <th>Hole16</th>
+    <th>Hole17</th>
+    <th>Hole18</th>
+  </tr>
+  {% for course in activeCourses %}
+    <tr>
+    <td>{{course[2]}}</td>
+    <td>{{course[3]}}</td>
+    <td>{{course[4]}}</td>
+    <td>{{course[5]}}</td>
+    <td>{{course[6]}}</td>
+    <td>{{course[7]}}</td>
+    <td>{{course[8]}}</td>
+    <td>{{course[9]}}</td>
+    <td>{{course[10]}}</td>
+    <td>{{course[11]}}</td>
+    <td>{{course[12]}}</td>
+    <td>{{course[13]}}</td>
+    <td>{{course[14]}}</td>
+    <td>{{course[15]}}</td>
+    <td>{{course[16]}}</td>
+    <td>{{course[17]}}</td>
+    <td>{{course[18]}}</td>
+    <td>{{course[19]}}</td>
+    <td>{{course[20]}}</td>
+  </tr>
+  {% endfor %}
+{% endif %}
