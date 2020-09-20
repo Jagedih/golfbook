@@ -22,4 +22,9 @@ A simple golf scoring book to store user golf round scores with following featur
 - Admin can delete played golf rounds.
 - Admin can delete users and if he does, every round user has played will be deleted from the database.
 
+# Current status:
+Basic functions like different type of database fetches are working and database schema is finished.
+User can store username and a password to the database and use them to log in.
 
+# Testing:
+You can test current version of the app at https://jagedi-golfbook.herokuapp.com/
