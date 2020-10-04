@@ -7,7 +7,7 @@ A simple golf scoring book to store user golf round scores with following featur
 - User can send friend requests.  
 - User can add own golf round scores using golf courses found in the database.
 - User can add golf rounds to users he is friends with. <p>
-- Golf drounds can be either handicap rounds or practise rounds.
+- Golf rounds can be either handicap rounds or practise rounds.
 - Fairway openings for every hole can be added while giving scores, default is null.
 - Putting scores can be added while user inputs scores, default is null.
 - GIR can be given while user inputs scores, default is null.  <p>
@@ -23,8 +23,20 @@ A simple golf scoring book to store user golf round scores with following featur
 - Admin can delete users and if he does, every round user has played will be deleted from the database.
 
 # Current status:
-Basic functions like different type of database fetches are working and database schema is finished.
-User can store username and a password to the database and use them to log in.
+User can create accounts
+User can send friend requests
+User can update userprofile
+User can post round scores for him/her and friends.
+Basic golf course info can be seen from courses.
+Admin can add golf courses to the db from the app.
 
-# Testing:
+#Not ready:
+User can not see his stats from the app. Scores are stored in the db.
+
+#Testing:
 You can test current version of the app at https://jagedi-golfbook.herokuapp.com/
+
+Test that you can create valid user accounts.
+See that when you add mutual friendships, you can see the friend from the profile.
+Test that you can add golf scores to you and your friends.
+Test that all the pages render.
