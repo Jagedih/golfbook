@@ -23,12 +23,12 @@ A simple golf scoring book to store user golf round scores with following featur
 - Admin can delete users and if he does, every round user has played will be deleted from the database.
 
 # Current status:
-User can create accounts
-User can send friend requests
-User can update userprofile
-User can post round scores for him/her and friends.
-Basic golf course info can be seen from courses.
-Admin can add golf courses to the db from the app.
+- User can create accounts.
+- User can send friend requests.
+- User can update userprofile.
+- User can post round scores for him/her and friends.
+- Basic golf course info can be seen from courses.
+- Admin can add golf courses to the db from the app.
 
 # Not ready:
 User can not see his stats from the app. Scores are stored in the db.
@@ -36,7 +36,8 @@ User can not see his stats from the app. Scores are stored in the db.
 # Testing:
 You can test current version of the app at https://jagedi-golfbook.herokuapp.com/
 
-Test that you can create valid user accounts.
-See that when you add mutual friendships, you can see the friend from the profile.
-Test that you can add golf scores to you and your friends.
-Test that all the pages render.
+- Test that you can create valid user accounts.
+- See that when you add mutual friendships, you can see the
+friend from the profile.
+- Test that you can add golf scores to you and your friends.
+- Test that all the pages render.
