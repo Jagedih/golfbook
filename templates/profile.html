@@ -1,7 +1,20 @@
-{% if session.user_id %}
-{% for detail in userDetails %}
-<h1>User profile: {{detail[0]}}</h1><p>
-real name: {{detail[1]}}<br>
-Golf club: {{detail[2]}}<br>
+{% extends "base.html" %}
+{% block title %}Edit userprofile{% endblock %}
+{% block content %}
+{% for detail in userData %}
+<h1>User profile: {{detail[0]}}</h1>
+<a href ="/editProfile">edit</a><p>
+  real name: {{detail[1]}}<br>
+  Golf club: {{detail[2]}}<br>
 {% endfor %}
-{% endif %}
+<h1>Friends:</h1>
+{% for friend in friendlist %}
+  {{friend[0]}},
+{% endfor %}
+<form action="/profile" method="post">
+  <label for="friend" >username : </label>
+  <input type="text"  name="friend" required="required">
+  <input type="submit" value="add">
+</form>
+(only mutual friendships are shown)
+{% endblock %}

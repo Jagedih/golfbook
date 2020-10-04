@@ -1,9 +1,3 @@
-{% if session.user_id %}
-<h1>Golfbook</h1>
-<a href ="/courses">past rounds</a><br>
-<a href ="/courses">post round</a><br>
-<a href ="/courses">friends</a><br>
-<a href ="/courses">courses</a><br>
-<a href ="/profile">profile</a><br>
-<a href ="/courses">stats</a><br>
-{% endif %}
+{% extends "base.html" %}
+{% block title %}Welcome to golfbook{% endblock %}
+{% block content %} <h1> :D {% endblock %}

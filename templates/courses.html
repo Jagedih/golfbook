@@ -1,49 +1,52 @@
-{% if session.user_id %}
+{% extends "base.html" %}
+{% block title %}Courses{% endblock %}
+{% block content %}
+
 <h1> Courses</h1>
-<table style="width:50%">
+<table style="width:600">
   <tr>
-    <!– to do: loop table creation –>
-    <th>name</th>
-    <th>Hole1</th>
-    <th>Hole2</th>
-    <th>Hole3</th>
-    <th>Hole4</th>
-    <th>Hole5</th>
-    <th>Hole6</th>
-    <th>Hole7</th>
-    <th>Hole</th>
-    <th>Hole9</th>
-    <th>Hole10</th>
-    <th>Hole11</th>
-    <th>Hole12</th>
-    <th>Hole13</th>
-    <th>Hole14</th>
-    <th>Hole15</th>
-    <th>Hole16</th>
-    <th>Hole17</th>
-    <th>Hole18</th>
+    <th>Name</th>
+    <th>club</th>
+    <th>address</th>
   </tr>
-  {% for course in activeCourses %}
-    <tr>
-    <td>{{course[2]}}</td>
-    <td>{{course[3]}}</td>
-    <td>{{course[4]}}</td>
-    <td>{{course[5]}}</td>
-    <td>{{course[6]}}</td>
-    <td>{{course[7]}}</td>
-    <td>{{course[8]}}</td>
-    <td>{{course[9]}}</td>
-    <td>{{course[10]}}</td>
-    <td>{{course[11]}}</td>
-    <td>{{course[12]}}</td>
-    <td>{{course[13]}}</td>
-    <td>{{course[14]}}</td>
-    <td>{{course[15]}}</td>
-    <td>{{course[16]}}</td>
-    <td>{{course[17]}}</td>
-    <td>{{course[18]}}</td>
-    <td>{{course[19]}}</td>
-    <td>{{course[20]}}</td>
+{% for courseData in allCourseData %}
+  <tr>
+    <th>{{courseData[0]}}</th>
+    <th>{{courseData[1]}}</th>
+    <th>{{courseData[2]}}</th>
   </tr>
-  {% endfor %}
-{% endif %}
+{% endfor %}
+</table>
+
+{% if user.isAdmin() %}
+  <h1> Admin functions: </h1>
+  add course:<br>
+  <form action="/courses" method="post">
+    <label for="name" >name : </label>
+    <input type="text"  name="courseName" required="required" pattern="[a-zA-Z0-9\s]+{1,20}"><p>
+    <label for="club">club : </label>
+    <select name="club">
+      {% for clubName in clubNames %}
+      <option value= "{{ clubName[0] }}">{{ clubName[0] }}</option>
+      {% endfor %}
+    </select>
+
+    <table style="width:300">
+      <tr>
+        <th>Hole</th>
+        <th>par</th>
+        <th>length</th>
+      </tr>
+      {% for i in range(1,19) %}
+      <tr>
+        <th>{{i}}</th>
+        <td> <input type="number" value = 4 name="par" min="3" max="5"></td>
+        <td> <input type="number" value = 300 name="length" min="50" max="600" step=10></td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    <input type="submit" value="submit">
+  </form>
+  {% endif %}
+{% endblock %}

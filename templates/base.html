@@ -1,0 +1,10 @@
+<!doctype html>
+{% if session.user_id %}
+<title>Golfbook - {% block title %}{% endblock %}</title>
+<h1>Golfbook</h1>
+<a href ="/profile">profile</a><br>
+<a href ="/courses">courses</a><br>
+<a href ="/scores">post score</a><br>
+<a href ="/asdf">logout</a><br>
+{% block content %}{% endblock %}
+{% endif %}

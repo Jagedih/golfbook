@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Post round score{% endblock %}
+{% block content %}
+Select golf course from the drop menu.
+<br>
+<form action="/scores" method="POST">
+  <label for="course">course:</label>
+  <select name="course">
+    {% for course in activeCourses %}
+    <option name={{course[0]}}>{{course[0]}}</option>
+    {% endfor %}
+  </select>
+  <br>
+  <input type="submit" value="Select">
+</form>
+{% endblock %}

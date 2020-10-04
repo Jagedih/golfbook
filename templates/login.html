@@ -3,11 +3,13 @@
 
 Please start by logging in.
 <p>
-<form action="/" method="POST">
-  username: <input type="text"  name="username">
-  password: <input type="password" name="password">
-  <br>
-  <input type="submit" value="login">
-  <br>
-  <a href ="/signUp">Create a new account.</a>
-</form>
+  <form action="/" method="POST">
+    username: <input type="text"  name="username">
+    password: <input type="password" name="password">
+    <p>
+
+    <input type="submit" value="login"><br>
+    {{message}}
+    <br>
+    <a href ="/signUp">Create a new account.</a>
+  </form>
