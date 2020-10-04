@@ -30,10 +30,10 @@ User can post round scores for him/her and friends.
 Basic golf course info can be seen from courses.
 Admin can add golf courses to the db from the app.
 
-#Not ready:
+# Not ready:
 User can not see his stats from the app. Scores are stored in the db.
 
-#Testing:
+# Testing:
 You can test current version of the app at https://jagedi-golfbook.herokuapp.com/
 
 Test that you can create valid user accounts.
