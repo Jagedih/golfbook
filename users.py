@@ -21,7 +21,7 @@ def login(username,password):
         return False
     else:
         if check_password_hash(details[0],password):
-            user.setUserSessionId(details[1])
+            user.set_user_session_id(details[1])
             return True
         else:
             return False

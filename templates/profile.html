@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block title %}Edit userprofile{% endblock %}
 {% block content %}
-{% for detail in userData %}
-<h1>User profile: {{detail[0]}}</h1>
-<a href ="/editProfile">edit</a><p>
-  real name: {{detail[1]}}<br>
-  Golf club: {{detail[2]}}<br>
+{% for info in user_data %}
+<h2>User profile: {{info[0]}}</h2><a href ="/edit_profile">edit</a><p>
+  real name: {{info[1]}}<br>
+  Golf club: {{info[2]}}<br>
 {% endfor %}
-<h1>Friends:</h1>
+<h2>Friends:</h2>
 {% for friend in friendlist %}
-  {{friend[0]}},
+  {{friend[0]}}<br>
 {% endfor %}
+<br>
+<h2>Add friends:</h2>
 <form action="/profile" method="post">
   <label for="friend" >username : </label>
   <input type="text"  name="friend" required="required">

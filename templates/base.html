@@ -1,10 +1,36 @@
-<!doctype html>
-{% if session.user_id %}
-<title>Golfbook - {% block title %}{% endblock %}</title>
-<h1>Golfbook</h1>
-<a href ="/profile">profile</a><br>
-<a href ="/courses">courses</a><br>
-<a href ="/scores">post score</a><br>
-<a href ="/asdf">logout</a><br>
-{% block content %}{% endblock %}
-{% endif %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<div class ="header">
+  <h1>Golfbook</h1>
+</div>
+<body>
+<div class="navbar">
+  <a href="index">Home</a>
+  <a href="courses">Courses</a>
+  <a href="profile">Profile</a>
+  <div class="dropdown">
+    <button class="dropbtn">Scores
+      <i class="buttonlist"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="scores">Post score</a>
+      <a href="handicap_scores">Handicap scores</a>
+      <a href="practice_scores">Practice scores</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Stats
+      <i class="buttonlist"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="handicap_stats">Handicap round stats</a>
+      <a href="practice_stats">Practice round stats</a>
+    </div>
+  </div>
+  <a href="logout">Logout</a>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

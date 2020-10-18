@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Edit profile{% endblock %}
 {% block content %}
-<form action="/editProfile" method="POST">
+<h2>Edit profile</h2>
+<form action="/edit_profile" method="POST">
   real name: <input type="text"  name="name">
-  <select name="club">
-    {% for clubName in clubNames %}
-    <option value= "{{ clubName[0] }}">{{ clubName[0] }}</option>
+   club: <select name="club">
+    {% for club_name in club_names %}
+    <option value= "{{club_name[0]}}">{{club_name[0]}}</option>
     {% endfor %}
   </select>
   <br>

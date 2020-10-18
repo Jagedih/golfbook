@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Score data{% endblock %}
+{% block content %}
+  <h3> Scores </h3>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <table>
+  {% for hole_score in all_hole_scores %}
+    {% if (loop.index % 19 == 0 or loop.index == 1) %}
+    <tr>
+      <th></th>
+      <th>hole</th>
+      <th>par</th>
+      <th>strokes</th>
+      <th>putts</th>
+      <th>Score</th>
+      <th></th>
+      <th>{{hole_score[0]}} - {{hole_score[5]}}</th>
+    <tr>
+      <tr>
+        <td></td>
+        <td>{{hole_score[1]}}</td>
+        <td>{{hole_score[2]}}</td>
+        <td>{{hole_score[3]}}</td>
+        <td>{{hole_score[4]}}</td>
+        <td>{{hole_score[3] - hole_score[2]}}</td>
+      <tr>
+    {% else %}
+    <tr>
+      <td></td>
+      <td>{{hole_score[1]}}</td>
+      <td>{{hole_score[2]}}</td>
+      <td>{{hole_score[3]}}</td>
+      <td>{{hole_score[4]}}</td>
+      <td>{{hole_score[3] - hole_score[2]}}</td>
+    <tr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

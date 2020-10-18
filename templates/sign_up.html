@@ -1,7 +1,13 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <title>Golfbook</title>
+<div class ="header">
+  <h1>Golfbook</h1>
+</div>
+<body>
 <h1>Sign up!</h1>
 <p>
-<form action="/signUp" method="post">
+<form action="/sign_up" method="post">
 Username: <input type="text" name="username">
 <p>
 Password: <input type="password" name="password">
@@ -12,3 +18,5 @@ Password: <input type="password" name="password">
 <p>
     <a href="/">go back to frontpage</a>
 </form>
+</body>
+</html>

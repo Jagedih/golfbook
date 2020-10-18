@@ -26,13 +26,13 @@ CREATE TABLE rounds (
   id SERIAL PRIMARY KEY,
   player TEXT REFERENCES users ON DELETE CASCADE,
   course INTEGER REFERENCES golf_courses ON DELETE CASCADE,
-  date_played  DATE NOT NULL
+  handicap BOOLEAN NOT NULL,
+  date_played DATE NOT NULL
 );
 CREATE TABLE scores (
   id SERIAL PRIMARY KEY,
   round_id INTEGER REFERENCES rounds ON DELETE CASCADE,
   hole_id INTEGER REFERENCES holes ON DELETE CASCADE,
-  fairway_hit BOOLEAN,
   strokes INTEGER NOT NULL,
   putts INTEGER NOT NULL
 );

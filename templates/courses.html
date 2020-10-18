@@ -1,33 +1,33 @@
 {% extends "base.html" %}
-{% block title %}Courses{% endblock %}
+{% block title %}Golf courses in database{% endblock %}
 {% block content %}
 
-<h1> Courses</h1>
+<h2>Available golf courses:</h2>
 <table style="width:600">
   <tr>
     <th>Name</th>
     <th>club</th>
     <th>address</th>
   </tr>
-{% for courseData in allCourseData %}
+{% for course_info in all_course_data %}
   <tr>
-    <th>{{courseData[0]}}</th>
-    <th>{{courseData[1]}}</th>
-    <th>{{courseData[2]}}</th>
+    <td>{{course_info[0]}}</td>
+    <td>{{course_info[1]}}</td>
+    <td>{{course_info[2]}}</td>
   </tr>
 {% endfor %}
 </table>
 
-{% if user.isAdmin() %}
-  <h1> Admin functions: </h1>
+{% if user.is_admin() %}
+  <h2> Admin functions: </h2>
   add course:<br>
   <form action="/courses" method="post">
     <label for="name" >name : </label>
     <input type="text"  name="courseName" required="required" pattern="[a-zA-Z0-9\s]+{1,20}"><p>
     <label for="club">club : </label>
     <select name="club">
-      {% for clubName in clubNames %}
-      <option value= "{{ clubName[0] }}">{{ clubName[0] }}</option>
+      {% for club_name in club_names %}
+      <option value= "{{ club_name[0] }}">{{ club_name[0] }}</option>
       {% endfor %}
     </select>
 

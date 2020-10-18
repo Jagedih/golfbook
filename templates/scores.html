@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Post round score{% endblock %}
 {% block content %}
-Select golf course from the drop menu.
-<br>
+<h2>Post round score</h2>
+Start by selecting the golf course from the drop menu you or you friend played.
+<p>
 <form action="/scores" method="POST">
-  <label for="course">course:</label>
   <select name="course">
-    {% for course in activeCourses %}
+    {% for course in active_courses %}
     <option name={{course[0]}}>{{course[0]}}</option>
     {% endfor %}
   </select>

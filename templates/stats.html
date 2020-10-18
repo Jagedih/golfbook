@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Stats{% endblock %}
+{% block content %}
+<h3>{{title}}</h3>
+<table>
+  <tr>
+    <th>rounds</th>
+    <th>putting average</th>
+    <th>shot average</th>
+    <th>maximum shots</th>
+    <th>minimum shots</th>
+  </tr>
+  <tr>
+  <td>{{round_amount}}</td>
+  <td>{{avg_putting}}</td>
+  <td>{{avg_shots}}</td>
+  <td>{{max_shots}}</td>
+  <td>{{min_shots}}</td>
+  </tr>
+</table>
+{% endblock %}

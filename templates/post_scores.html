@@ -1,48 +1,55 @@
 {% extends "base.html" %}
 {% block title %}Post round score{% endblock %}
 {% block content %}
-<h1>Course:{{courseName}}</h1>
-<table style="width:600">
+<h2>Post round score: </h2>
+<h3>Course - {{course_name}}</h3>
+<table class="center">
   <tr>
     <th>Hole:</th>
-    {% for holeDetail in holeDetails %}
-    <td>{{holeDetail[0]}}</td>
+    {% for hole_detail in hole_details %}
+    <td>{{hole_detail[0]}}</td>
     {% endfor %}
   </tr>
   <tr>
     <th>PAR:</th>
-    {% for holeDetail in holeDetails %}
-    <td>{{holeDetail[1]}}</td>
+    {% for hole_detail in hole_details %}
+    <td>{{hole_detail[1]}}</td>
     {% endfor %}
   </tr>
   <tr>
     <th>Length:</th>
-    {% for holeDetail in holeDetails %}
-    <td>{{holeDetail[2]}}</td>
+    {% for hole_detail in hole_details %}
+    <td>{{hole_detail[2]}}</td>
     {% endfor %}
   </tr>
   <tr>
-    <form action="/postScores" method="post">
-      <input type="hidden" name="course" value="{{courseName}}">
+    <form action="/post_scores" method="post">
+      <input type="hidden" name="course" value="{{course_name}}">
       <th>Strokes</th>
       {% for i in range(1,19) %}
       <td> <input type="number" value = 4 name="score" min="1" max="15"></td>
       {% endfor %}
   </tr>
   <tr>
-    <th>Puts</th>
+    <th>Putts</th>
     {% for i in range(1,19) %}
     <td> <input type="number" value = 2 name="putt" min="0" max="8"></td>
     {% endfor %}
   </tr>
 </table>
+<b>Date played:
 <input type="date" name="played" required>
     Player:
     <select name="player">
-      <option value= "{{userId}}">{{userId}}</option>
+      <option value="{{user_id}}">{{user_id}}</option>
       {% for friend in friends %}
       <option value= "{{friend[0]}}">{{friend[0]}}</option>
       {% endfor %}
+    </select>
+    Handicap round:</b>
+    <select name="handicap">
+      <option value=true>yes</option>
+      <option value=false>no</option>
     </select>
     <br>
 <input type="submit" value="submit score">
